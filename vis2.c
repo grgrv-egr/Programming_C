@@ -16,7 +16,7 @@ int main() {
         a1 = ((a-32)/1.8);
         printf("%.1f%c\n", a1, cel);
     } else if (b==cel || b==cel1) {
-        a2 = ((a*1,8)+32);
+        a2 = ((a*1.8)+32);
         printf("Ouput temperature: "); printf("%.1f%c\n", a2, far);
     } else {
         printf("Ouput error\n");
