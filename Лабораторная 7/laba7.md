@@ -6,10 +6,12 @@
 ```c
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 
 void* child_thread(void* arg) {
     for (int i = 1; i <= 5; i++) {
         printf("Дочерний поток: строка %d\n", i);
+        sleep(1);
     }
     return NULL;
 }
@@ -19,6 +21,7 @@ int main() {
     pthread_create(&thread, NULL, child_thread, NULL);    
     for (int i = 1; i <= 5; i++) {
         printf("Родительский поток: строка %d\n", i);
+        sleep(1);
     }    
     pthread_join(thread, NULL);
     return 0;
