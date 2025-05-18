@@ -9,7 +9,7 @@
 
 void* child_thread(void* arg) {
     for (int i = 1; i <= 5; i++) {
-        printf("Дочерний поток: сообщение %d\n", i);
+        printf("Дочерний поток: строка %d\n", i);
     }
     return NULL;
 }
@@ -18,7 +18,7 @@ int main() {
     pthread_t thread;
     pthread_create(&thread, NULL, child_thread, NULL);    
     for (int i = 1; i <= 5; i++) {
-        printf("Родительский поток: сообщение %d\n", i);
+        printf("Родительский поток: строка %d\n", i);
     }    
     pthread_join(thread, NULL);
     return 0;
@@ -38,7 +38,7 @@ int main() {
 
 void* child_thread(void* arg) {
     for (int i = 1; i <= 5; i++) {
-        printf("Дочерний поток: сообщение %d\n", i);
+        printf("Дочерний поток: строка %d\n", i);
     }
     return NULL;
 }
@@ -48,7 +48,7 @@ int main() {
     pthread_create(&thread, NULL, child_thread, NULL);   
     pthread_join(thread, NULL);    
     for (int i = 1; i <= 5; i++) {
-        printf("Родительский поток: сообщение %d\n", i);
+        printf("Родительский поток: строка %d\n", i);
     }  
     return 0;
 }
